@@ -1,0 +1,67 @@
+<html>  
+
+<head>   
+	<title>  
+		API Access Portal  
+	</title>  
+</head>  
+
+<body bgcolor="Lightskyblue">  
+<br><br>  
+	<!-- <form> -->
+		<h1 id="head">   
+			API Access Portal
+		</h1>
+		<h2>
+			<br><br>  
+			Client Name : Test Client
+			<br><br>
+			Client Id : cvxxvvssbb
+		</h2>
+		<label>
+			API Name:
+		</label>   
+		<select>  
+			<option value="Book Inventory API">Book Inventory API</option>  
+			<option value="OKTA Automation API">Okta Automation API</option>   
+		</select>
+		<br><br>
+	  	<label>   
+			Available Scopes:  
+		</label>   
+		<select>  
+			<option value="Read">Read</option>  
+			<option value="Write">Write</option>   
+		</select>
+		<br><br> 
+		<input type="text" id="input" value="sdf"/>
+		<button id="bttn" onclick="callOkta();">Request Access</button>  
+	<!-- </form> -->
+	<script type="text/javascript">
+
+		const oktaUrl = "http://worldtimeapi.org/api/timezone/Asia/Kolkata";
+
+		async function callOkta(){
+			const response = await fetch(oktaUrl);
+			const data = await response.json();
+			console.log(data);
+		}
+
+
+		/*const userAction = async () => {
+  			const response = await fetch('http://worldtimeapi.org/api/timezone/Asia/Kolkata', {
+  			mode: 'no-cors',
+    		method: 'GET',
+    		//body: myBody, // string or object
+    		headers: {
+      		'Content-Type': 'application/json'
+    		}
+  			});
+  			const myJson = await response.json(); //extract JSON from the http response
+  			// do something with myJson
+		}*/
+
+	</script>  
+</body>  
+
+</html>
